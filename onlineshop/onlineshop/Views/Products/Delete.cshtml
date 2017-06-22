@@ -1,0 +1,193 @@
+﻿@model onlineshop.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CATEGORYID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEGORYID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCTSKU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCTSKU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHORTDESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHORTDESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISACTIVE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISACTIVE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNITCOST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNITCOST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNITPRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNITPRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WEIGHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WEIGHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCTSTOCK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCTSTOCK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCTDESCOUNT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCTDESCOUNT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HEADER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HEADER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOOTER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOOTER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISTAXED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISTAXED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISDESCOUNT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISDESCOUNT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SMALLIMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SMALLIMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MEDIUMIMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEDIUMIMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LARGEIMAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LARGEIMAGE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXTRA1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXTRA1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXTRA2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXTRA2)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

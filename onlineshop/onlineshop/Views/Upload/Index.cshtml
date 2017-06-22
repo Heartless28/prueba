@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "UploadView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+
+<form action="Upload/Uploadmulti" method="post" enctype="multipart/form-data">
+
+    <label for="file">Filename:</label>
+    <input type="file" name="files" webkitdirectory mozdirectory />
+    <input type="submit" />
+
+</form>
+
+
+@Scripts.Render("~/bundles/scripts")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

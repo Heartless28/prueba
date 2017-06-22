@@ -1,0 +1,39 @@
+﻿@using onlineshop.Models
+@model onlineshop.Models.Product
+
+@{
+    ViewBag.Title = "DetailView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1" style="margin-left:5%;">
+
+            <img src="~/Images/products/@(Model.LOCATION)" alt="banner" width="200" height="200">
+        </div>
+
+        <div class="col-md-3" style="width:100%">
+
+            @Html.Label(Model.HEADER)
+            <div style="font-size:x-small">disponible: @Html.Label(Model.PRODUCTSTOCK.ToString())</div>
+            <hr />
+            @Html.Label(Model.DESCRIPTION)
+            <hr />
+            <strong>Precio: @Html.Label(Model.UNITPRICE.ToString("#.##"))</strong> <button class="btn btn-sm btn-success">Añadir al carrito  <span class="glyphicon glyphicon-shopping-cart"></span></button>
+
+        </div>
+    </div>
+    @Html.Label(Model.FOOTER)
+</div>
+
+
+
+
+@Scripts.Render("~/bundles/scripts")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

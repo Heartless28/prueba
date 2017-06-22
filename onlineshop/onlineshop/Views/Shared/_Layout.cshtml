@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Ptygameshop</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    
+
+    <div id="sbanner" style="background-color:#E0E0E0; width: 800px; margin:0 auto; height:250px;"  >
+        <div  class="container-fluid">
+            <div class="row" >
+                
+                <img src="~/Images/banner.jpg" alt="banner" width="800" height="250">
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="navbar" style="background-color:#263238; height:120px;">
+
+        <div class="container" style="position: absolute; margin-top: 1%;">
+            <div id="logo" style="width:250px; height:100px;">
+                <img src="~/Images/logo.png" alt="logo" width="250" height="100">
+            </div>
+        </div>
+
+        <div class="container" style="width: 100%;">
+            <div class="row">
+
+                @using (Html.BeginForm("Index", "Search", FormMethod.Post))
+                {
+
+                <div class="input-group col-md-6" style="margin-top:1%; margin-left:20%;">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="#">PlayStation</a></li>
+                            <li><a href="#">Xbox</a></li>
+                            <li><a href="#">Wii U</a></li>
+                            <li><a href="#">PC</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Todas</a></li>
+
+                        </ul>
+                    </div>
+                  
+                        <input  type="text" name="searchtext" class="form-control"/>
+
+                        <div class="input-group-btn">
+
+                            <button type="submit" class="btn btn-default" style="background-color: coral;">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+
+                        </div>
+                    
+                </div>
+                }
+            </div>
+
+        </div>
+        <!--*************************************************************************************************************-->
+        <!--opciones principales-->
+        <!--*************************************************************************************************************-->
+        <div class="container" style="width: 29%; position: absolute; margin-left: 71%; margin-top: -35px;">
+            <div class="row">
+
+                <div id="favoritos" class="col-md-2" style="width:100px; height:60px; cursor: pointer;">
+                    <div align="center"> <img src="~/Images/icons/favoritew.png" alt="favorite" width="36" height="36"> </div>
+                    <div align="center"><a style="color: coral;" href="#">Favoritos</a></div>
+                </div>
+
+                <div id="notification" class="col-md-2" style="width:100px; height:60px; cursor: pointer;">
+                    <div align="center"> <img src="~/Images/icons/notificationw.png" alt="notification" width="36" height="36"> </div>
+                    <div align="center">
+                        <a style="color: coral;" href="#">Alertas</a>
+                        <label class="badge">0</label>
+                    </div>
+                </div>
+
+                <div id="carrito" class="col-md-2" style="width:95px; height:60px; cursor: pointer;">
+                    <div align="center"> <img src="~/Images/icons/cartw.png" alt="carrito" width="36" height="36"> </div>
+                    <div align="center">
+                        <a style="color: coral;" href="#">Cesta</a>
+                        <label class="badge">0</label>
+                    </div>
+                </div>
+
+                <div id="Usuario" class="col-md-2" style="width:95px; height:60px; cursor: pointer;">
+                    <div align="center"> <img src="~/Images/icons/user.png" class="img-thumbnail" alt="user" width="48" height="48"></div>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+        <div style="width:100%;">
+            @RenderBody()
+            <hr />
+            <footer style="background-color:#263238; height:4%;">
+                <p style="color:white;">&copy; @DateTime.Now.Year - Pty Game Shop</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/scripts")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

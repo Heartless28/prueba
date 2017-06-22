@@ -1,0 +1,43 @@
+﻿@using onlineshop.Models
+@model IEnumerable<onlineshop.Models.Product>
+
+@{
+    ViewBag.Title = "SearchView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+
+<div class="list-group">
+    @foreach (var t in Model)
+    {
+        <div class="list-group-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1" style="margin-left:-8%;">
+
+                       
+
+                        <img src="~/Images/products/@(t.LOCATION)"  width="80" height="100">
+                    </div>
+
+                    <div class="col-md-3" style="width:100%">
+
+                        @Html.ActionLink(t.HEADER,"detail", new { productid = t.PRODUCTID },null) - @Html.Label(t.UNITPRICE.ToString("#.##"))
+                        <hr />
+                        @Html.Label(t.DESCRIPTION)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+@Scripts.Render("~/bundles/scripts")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

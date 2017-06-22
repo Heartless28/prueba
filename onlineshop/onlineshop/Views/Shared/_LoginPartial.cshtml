@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+        <div class="dropdown">
+            <div align="center" class="dropbtn">@Html.ActionLink("Hola " + User.Identity.GetUserName() , "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</div>
+            <div class="dropdown-content dropdown-menu dropdown-menu-right">
+
+                <a href="#">Mi Cuenta</a>
+                <a href="#">Mis Ordenes</a>
+                <a href="#">Mis Favoritos</a>
+                <a href="#">Alertas</a>
+                <a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a>
+
+            </div>
+        </div>
+
+    }
+}
+else
+{
+
+    <div class="dropdown">
+        <div align="center" class="dropbtn"><a style="color: coral;" href="#">Identificate</a></div>
+        <div class="dropdown-content dropdown-menu dropdown-menu-right">
+
+            <div align="center">  Bienvenido a PTY Game Shop</div>
+            <div align="center">@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</div>
+            <div align="left" style="margin-left: 1%;">  Iniciar session con:</div>
+            <div align="center" class="input-group-btn">
+                <button class="btn btn-default">
+                    <img src="~/Images/icons/facebook.png" alt="facebook" width="32" height="32">
+                </button>
+                <button class="btn btn-default">
+                    <img src="~/Images/icons/google.png" alt="google" width="32" height="32">
+                </button>
+            </div>
+            <div role="separator" class="divider"></div>
+            <div align="left" style="margin-left: 1%;">  Eres nuevo? </div>
+            <div align="center">@Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</div>
+            <div role="separator" class="divider"></div>
+            <a href="#">Mi Cuenta</a>
+            <a href="#">Mis Ordenes</a>
+            <a href="#">Mis Favoritos</a>
+            <a href="#">Alertas</a>
+
+
+
+        </div>
+    </div>
+    
+}
